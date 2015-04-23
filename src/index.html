@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/material-catalog-item/src/material-catalog-item.html">
+
+    <!-- ES6-related imports -->
+    <script src="lib/traceur-runtime.js"></script>
+    <script src="lib/es6-module-loader-sans-promises.src.js"></script>
+    <script src="lib/extension-register.js"></script>
+    <script>
+        register(System);
+    </script>
+
+    <!-- Angular2-related imports -->
+    <script src="lib/zone.js"></script>
+    <script src="lib/long-stack-trace-zone.js"></script>
+    <script src="lib/angular2.js"></script>
+
+    <link rel="stylesheet" href="angular-material.css">
+</head>
+<body>
+    <shopping-cart-app>
+        Loading...
+    </shopping-cart-app>
+</body>
+
+<!-- Application bootstrap logic -->
+<script>
+    System.import('cart')
+        .then(function(module) {
+            zone = zone.fork(Zone.longStackTraceZone);
+            module.main();
+        }, console.log.bind(console));
+</script>
+
+</html>
