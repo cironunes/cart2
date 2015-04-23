@@ -1,0 +1,20 @@
+{
+  "name": "material-catalog-item",
+  "version": "0.0.0",
+  "homepage": "https://github.com/cironunes/material-catalog-item",
+  "authors": [
+    "'Ciro <'ciroanunes@gmail.com'>"
+  ],
+  "main": "src/material-catalog-item.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#0.8-preview"
+  }
+}

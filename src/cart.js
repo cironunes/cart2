@@ -60,6 +60,7 @@ class CartService {
   }
 }
 
+
 @Component({
     selector: 'shopping-cart-app',
     injectables: [
@@ -72,6 +73,7 @@ class CartService {
     templateUrl: 'catalog.html',
     directives: [For, If]
 })
+
 class ShoppingCmp {
     items: List<Object>;
 
@@ -81,7 +83,7 @@ class ShoppingCmp {
     }
 }
 
+
 export function main() {
   bootstrap(ShoppingCmp);
 }
-
