@@ -1,20 +1,65 @@
-<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="/bower_components/polymer/polymer.html">
 
 <dom-module id="material-catalog-item">
-    <template>
-      <img class$="{{namespace}}" src="{{photo}}">
-      <span class$="{{namespace}}">{{price}}</span>
-      <content />
-    </template>
+  <link rel="stylesheet" href="./style/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+  <style>
+    :host{
+      display: inline-block;
+      transition: all .3s ease;
+    }
+
+    :host:hover img {
+      -webkit-transform: scale(1.1) translate(0, -5%) !important;
+    }
+
+    img {
+      transition: all .3s ease;
+    }
+
+    .card {
+      width: 300px;
+    }
+
+    .card.small {
+      height: 400px;
+    }
+
+    .card.small .card-image {
+      height: 250px;
+    }
+
+    .card .card-image .card-title {
+      width: 100%;
+      background-color: rgba(0, 0, 0, .7);
+    }
+  </style>
+
+
+  <template>
+    <div class="catalog-card card small">
+      <div class="card-image">
+        <img src="{{photo}}">
+        <span class="card-title">{{name}}</span>
+      </div>
+      <div class="card-content">
+        <p>{{description}}</p>
+      </div>
+      <div class="card-action">
+        <content/>
+      </div>
+    </div>
+  </template>
 </dom-module>
 
 <script>
-    Polymer({
-        is: 'material-catalog-item',
-        properties: {
-            photo: String,
-            price: Number,
-            namespace: String
-        }
-    });
+  Polymer({
+    is: 'material-catalog-item',
+    properties: {
+      name: String,
+      photo: String,
+      description : String,
+      price: Number
+    }
+  });
 </script>
