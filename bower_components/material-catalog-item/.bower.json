@@ -1,0 +1,28 @@
+{
+  "name": "material-catalog-item",
+  "homepage": "https://github.com/cironunes/material-catalog-item",
+  "authors": [
+    "'Ciro <'ciroanunes@gmail.com'>"
+  ],
+  "main": "src/material-catalog-item.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#0.8-preview"
+  },
+  "_release": "51949098e9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "51949098e90d1d5befd2ac18b1d5f4a6dc1bc48a"
+  },
+  "_source": "git://github.com/cironunes/material-catalog-item.git",
+  "_target": "*",
+  "_originalSource": "material-catalog-item"
+}
