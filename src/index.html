@@ -23,14 +23,14 @@
     <link rel="stylesheet" href="cart.css">
 </head>
 <body>
-    <shopping-cart-app>
+    <shopping-app>
         Loading...
-    </shopping-cart-app>
+    </shopping-app>
 </body>
 
 <!-- Application bootstrap logic -->
 <script>
-    System.import('cart')
+    System.import('app')
         .then(function(module) {
             zone = zone.fork(Zone.longStackTraceZone);
             module.main();

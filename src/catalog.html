@@ -1,15 +1,6 @@
-<div class="store-wrapper">
-  <header class="store-header">
-    <nav>
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Catalog</a>
-      </div>
-    </nav>
-  </header> <!-- store-header -->
-
-  <main class="store-content">
+<main class="store-content">
     <ul class="store-itens">
-      <li class="store-item" *for="#item of catalog.items">
+      <li class="store-item" *for="#item of items">
           <material-catalog-item [name]="item.name"
                                   [price]="item.price"
                                   [photo]="item.photo"
@@ -18,28 +9,4 @@
           </material-catalog-item>
       </li>
     </ul>
-  </main> <!-- store-content -->
-
-  <aside class="store-cart">
-    <div class="store-cart-header">
-      <h2>Cart</h2>
-    </div>
-
-    <ul class="store-cart-itens collection">
-      <li class="store-cart-item collection-item" *for="#cartItem of cart.items">
-        <span>{{ cartItem.name }}</span>
-        <span>{{ cartItem.quantity }}</span>
-        <button (click)="cart.removeItem(cartItem)" class="md-button">remove</button>
-      </li>
-    </ul>
-
-    <div class="store-cart-footer">
-      <nav>
-        <div class="nav-wrapper">
-          <span>Total: {{ cart.calculateTotal() }}</span>
-          <button (click)="cart.checkout()" *if="cart.items.length" class="md-button">checkout</button>
-        </div>
-      </nav>
-    </div>
-  </aside><!-- store-cart -->
-</div><!-- store-wrapper -->
+</main> <!-- store-content -->

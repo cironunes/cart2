@@ -1,0 +1,24 @@
+<aside class="store-cart">
+    <div class="store-cart-header">
+        <h2>Cart</h2>
+    </div>
+
+    <ul class="store-cart-itens collection">
+        <li class="store-cart-item collection-item" *for="#item of items">
+            <span>{{ item.name }}</span>
+            <span>{{ item.quantity }}</span>
+            <button (click)="removeItem(item)" class="md-button">remove</button>
+        </li>
+    </ul>
+
+    <span [hidden]="items.length">Your cart is empty. Go ahead and add some items! :)</span>
+
+    <div class="store-cart-footer">
+        <nav>
+            <div class="nav-wrapper">
+                <span>Total: {{ calculateTotal() }}</span>
+                <button (click)="checkout()" *if="items.length" class="md-button">checkout</button>
+            </div>
+        </nav>
+    </div>
+</aside><!-- store-cart -->

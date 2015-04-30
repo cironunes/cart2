@@ -1,17 +1,14 @@
-import {bootstrap, Component, View, For, If} from 'angular2/angular2';
+import {Component, View, For, If} from 'angular2/angular2';
 
-class CatalogService {
-  items: List<Object>;
+@Component({
+  selector: 'shopping-cart'
+})
+@View({
+  templateUrl: 'cart.html',
+  directives: [For, If]
+})
 
-  constructor() {
-    this.items = [
-    { id: 0, name: 'Ferrari', price: 2e5, photo: 'http://png-1.findicons.com/files/icons/1012/racing_cars/256/ferrari.png', description: 'The nicest car ever!' },
-    { id: 1, name: 'Viper', price: 1e5, photo: 'http://findicons.com/files/icons/1012/racing_cars/128/dodge.png', description: 'For you that loves performance.' }
-    ];
-  }
-}
-
-class CartService {
+export class Cart {
   items: List<Object>;
 
   constructor() {
@@ -58,30 +55,5 @@ class CartService {
 
     return total;
   }
-}
-
-@Component({
-  selector: 'shopping-cart-app',
-  injectables: [
-    CatalogService,
-    CartService
-  ]
-})
-
-@View({
-  templateUrl: 'catalog.html',
-  directives: [For, If]
-})
-class ShoppingCmp {
-  items: List<Object>;
-
-  constructor(catalog:CatalogService, cart:CartService) {
-    this.catalog = catalog;
-    this.cart = cart;
-  }
-}
-
-export function main() {
-  bootstrap(ShoppingCmp);
 }
 
